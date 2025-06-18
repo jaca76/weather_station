@@ -58,6 +58,9 @@
 #define WIND_KMH_PER_PULSE_HZ 2.4    // Standard for SparkFun Weather Meters (1 pulse/sec = 2.4 km/h)
 #define WEATHER_CALC_INTERVAL 5000   // Calculate weather values every 5 seconds (ms)
 
+// --- Debouncing for wind speed ---
+#define DEBOUNCE_DELAY_US 10000      // 10ms debounce delay in microseconds
+
 // --- Global Objects ---
 #if DEBUG
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* clock=*/ OLED_SCL, /* data=*/ OLED_SDA);
@@ -69,9 +72,11 @@ Adafruit_BME280 bme; // BME280 Sensor object (I2C)
 float temperature = NAN;
 float humidity = NAN;
 float pressure_hPa = NAN;
+
 // Weather Shield Sensors
 volatile unsigned long rainClicks = 0;      // Reset each active cycle
 volatile unsigned long windSpeedClicks = 0; // Reset each active cycle
+volatile unsigned long lastWindPulseTime = 0; // For debouncing
 float windSpeedKmh = 0.0;
 float rainfallMm = 0.0;      // Rainfall in the current WEATHER_CALC_INTERVAL
 float totalRainfallMm = 0.0; // Accumulated rainfall during the current 1-min active period
@@ -82,9 +87,17 @@ unsigned long activePhaseStartTime = 0; // To track the start of the 1-minute ac
 unsigned long lastWeatherCalcTime = 0;  // For periodic sensor reads during active phase
 
 // --- Interrupt Service Routines (ISRs) ---
-void IRAM_ATTR rain_isr() { rainClicks++; }
-void IRAM_ATTR wind_speed_isr() { windSpeedClicks++; }
-// AS3935 ISR (lightning_isr) removed
+void IRAM_ATTR rain_isr() { 
+  rainClicks++; 
+}
+
+void IRAM_ATTR wind_speed_isr() { 
+  unsigned long currentTime = micros();
+  if (currentTime - lastWindPulseTime > DEBOUNCE_DELAY_US) {
+    windSpeedClicks++;
+    lastWindPulseTime = currentTime;
+  }
+}
 
 void setup() {
   Serial.begin(115200);
@@ -129,18 +142,26 @@ void setup() {
     Serial.println("BME280 Initialized OK");
   }
 
-  // AS3935 Initialization Removed
-
   // --- Initialize Weather Shield Pins & Interrupts ---
   Serial.println("Initializing Weather Shield Pins...");
+  
+  // Set ADC attenuation for wind direction pin to handle 3.3V range
+  analogSetAttenuation(ADC_11db);
   pinMode(WIND_DIR_PIN, INPUT); // Wind Vane
+  
   pinMode(RAIN_PIN, INPUT_PULLUP); // Rain Gauge
   detachInterrupt(digitalPinToInterrupt(RAIN_PIN)); // Detach if previously attached
   attachInterrupt(digitalPinToInterrupt(RAIN_PIN), rain_isr, FALLING);
+  
   pinMode(WIND_SPEED_PIN, INPUT_PULLUP); // Wind Speed
   detachInterrupt(digitalPinToInterrupt(WIND_SPEED_PIN)); // Detach if previously attached
   attachInterrupt(digitalPinToInterrupt(WIND_SPEED_PIN), wind_speed_isr, FALLING);
+  
   Serial.println("Weather Shield Interrupts Attached.");
+  
+  // Test initial wind direction reading
+  windDirADC = analogRead(WIND_DIR_PIN);
+  Serial.print("Initial Wind Direction ADC: "); Serial.println(windDirADC);
 
   // --- Initialize LoRa ---
   Serial.println("Initializing LoRa...");
@@ -176,7 +197,6 @@ void setup() {
   windSpeedClicks = 0;
   rainfallMm = 0.0;
   totalRainfallMm = 0.0;
-  // Lightning variables removed
 }
 
 void loop() {
@@ -184,8 +204,6 @@ void loop() {
 
   if (currentTime - activePhaseStartTime < ACTIVE_DURATION_MS) {
     // --- WITHIN 1-MINUTE ACTIVE WINDOW ---
-
-    // handleLightning() removed
 
     if (currentTime - lastWeatherCalcTime >= WEATHER_CALC_INTERVAL) {
       readEnvSensors(); 
@@ -196,8 +214,6 @@ void loop() {
     #if DEBUG
     displayInfo(); 
     #endif
-
-    // Clearing old lightning data removed
 
     delay(10); 
 
@@ -229,8 +245,6 @@ void loop() {
     esp_deep_sleep_start();
   }
 }
-
-// handleLightning() function removed
 
 // --- Function to Read BME280 Environmental Sensor ---
 void readEnvSensors() {
@@ -274,7 +288,14 @@ void calculateWeatherShieldData(unsigned long currentTime) {
   rainfallMm = (float)currentRainClicks * RAIN_MM_PER_TIP; 
   totalRainfallMm += rainfallMm; 
 
-  windDirADC = analogRead(WIND_DIR_PIN);
+  // Take multiple readings of wind direction and average them
+  int windDirSum = 0;
+  const int numReadings = 5;
+  for (int i = 0; i < numReadings; i++) {
+    windDirSum += analogRead(WIND_DIR_PIN);
+    delay(10); // Small delay between readings
+  }
+  windDirADC = windDirSum / numReadings;
   windDirectionStr = getWindDirection(windDirADC);
 
   Serial.print(currentTime / 1000); Serial.print("s (active) - ");
@@ -286,28 +307,29 @@ void calculateWeatherShieldData(unsigned long currentTime) {
   Serial.print("Rnow:"); Serial.print(rainfallMm, 2); Serial.print("mm, Rtotal:"); Serial.print(totalRainfallMm, 2); Serial.print("mm("); Serial.print(currentRainClicks); Serial.println("c)");
 }
 
-
 // --- Function to Convert Wind Vane ADC Reading to Direction ---
+// Updated thresholds for ESP32 12-bit ADC (0-4095 range)
 String getWindDirection(int adcValue) {
-        if (adcValue > 3900) return "N";   
-  else if (adcValue > 3500) return "NNE"; 
-  else if (adcValue > 3200) return "NE";  
-  else if (adcValue > 2850) return "ENE"; 
-  else if (adcValue > 2500) return "E";   
-  else if (adcValue > 2100) return "ESE"; 
-  else if (adcValue > 1700) return "SE";  
-  else if (adcValue > 1400) return "SSE"; 
-  else if (adcValue > 1000) return "S";   
-  else if (adcValue > 750)  return "SSW"; 
-  else if (adcValue > 550)  return "SW";  
-  else if (adcValue > 400)  return "WSW"; 
-  else if (adcValue > 280)  return "W";   
-  else if (adcValue > 180)  return "WNW"; 
-  else if (adcValue > 100)  return "NW";  
-  else if (adcValue >= 0)   return "NNW"; 
+  // These values may need calibration based on your specific setup
+  // The following are typical values for SparkFun Weather Meters with 3.3V supply
+       if (adcValue >= 3800) return "N";     // ~3.84V
+  else if (adcValue >= 3400) return "NNE";   // ~2.98V  
+  else if (adcValue >= 3200) return "NE";    // ~2.25V
+  else if (adcValue >= 2800) return "ENE";   // ~1.41V
+  else if (adcValue >= 2400) return "E";     // ~1.19V
+  else if (adcValue >= 2000) return "ESE";   // ~0.94V
+  else if (adcValue >= 1600) return "SE";    // ~0.69V
+  else if (adcValue >= 1200) return "SSE";   // ~0.45V
+  else if (adcValue >= 900)  return "S";     // ~0.32V
+  else if (adcValue >= 700)  return "SSW";   // ~0.28V
+  else if (adcValue >= 500)  return "SW";    // ~0.26V
+  else if (adcValue >= 350)  return "WSW";   // ~0.24V
+  else if (adcValue >= 250)  return "W";     // ~0.21V
+  else if (adcValue >= 150)  return "WNW";   // ~0.18V
+  else if (adcValue >= 100)  return "NW";    // ~0.16V
+  else if (adcValue >= 50)   return "NNW";   // ~0.14V
   else return "---"; 
 }
-
 
 // --- Function to Display Info on OLED (Conditional) ---
 #if DEBUG
@@ -323,12 +345,10 @@ void displayInfo() {
   if (!isnan(pressure_hPa)) snprintf(dataStr, sizeof(dataStr), "P:%.0fhPa", pressure_hPa); else snprintf(dataStr, sizeof(dataStr), "P:----hPa"); 
   u8g2.drawStr(0, 25, dataStr);
 
-  // Lightning display removed
-  // Adjust Y position for Wind/Rain if needed, or add other status
   u8g2.drawStr(0, 40, "No Lightning Sensor"); // Placeholder or remove
 
   snprintf(dataStr, sizeof(dataStr), "W:%s %.1fkph", windDirectionStr.c_str(), windSpeedKmh);
-  u8g2.drawStr(0, 55, dataStr); // Adjusted Y position from 55
+  u8g2.drawStr(0, 55, dataStr);
 
   int windStrLen = u8g2.getStrWidth(dataStr);
   snprintf(dataStr, sizeof(dataStr), "R:%.1f/%.1fmm", rainfallMm, totalRainfallMm);
@@ -359,8 +379,6 @@ void sendLoRaPacket() {
   if (!isnan(temperature)) jsonDoc["T"] = serialized(String(temperature, 1));
   if (!isnan(humidity)) jsonDoc["H"] = serialized(String(humidity, 1));
   if (!isnan(pressure_hPa)) jsonDoc["P"] = serialized(String(pressure_hPa, 1));
-
-  // Lightning data ("L") removed from JSON
 
   jsonDoc["WS"] = serialized(String(windSpeedKmh, 1));
   jsonDoc["WD"] = windDirectionStr;
