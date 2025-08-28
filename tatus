@@ -1,0 +1,644 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 259148f..a642095 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -1,32 +1,32 @@[m
+[31m-# Prerequisites[m
+[31m-*.d[m
+[31m-[m
+[31m-# Compiled Object files[m
+[31m-*.slo[m
+[31m-*.lo[m
+[31m-*.o[m
+[31m-*.obj[m
+[31m-[m
+[31m-# Precompiled Headers[m
+[31m-*.gch[m
+[31m-*.pch[m
+[31m-[m
+[31m-# Compiled Dynamic libraries[m
+[31m-*.so[m
+[31m-*.dylib[m
+[31m-*.dll[m
+[31m-[m
+[31m-# Fortran module files[m
+[31m-*.mod[m
+[31m-*.smod[m
+[31m-[m
+[31m-# Compiled Static libraries[m
+[31m-*.lai[m
+[31m-*.la[m
+[31m-*.a[m
+[31m-*.lib[m
+[31m-[m
+[31m-# Executables[m
+[31m-*.exe[m
+[31m-*.out[m
+[31m-*.app[m
+[32m+[m[32m# Prerequisites[m[41m[m
+[32m+[m[32m*.d[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Compiled Object files[m[41m[m
+[32m+[m[32m*.slo[m[41m[m
+[32m+[m[32m*.lo[m[41m[m
+[32m+[m[32m*.o[m[41m[m
+[32m+[m[32m*.obj[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Precompiled Headers[m[41m[m
+[32m+[m[32m*.gch[m[41m[m
+[32m+[m[32m*.pch[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Compiled Dynamic libraries[m[41m[m
+[32m+[m[32m*.so[m[41m[m
+[32m+[m[32m*.dylib[m[41m[m
+[32m+[m[32m*.dll[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Fortran module files[m[41m[m
+[32m+[m[32m*.mod[m[41m[m
+[32m+[m[32m*.smod[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Compiled Static libraries[m[41m[m
+[32m+[m[32m*.lai[m[41m[m
+[32m+[m[32m*.la[m[41m[m
+[32m+[m[32m*.a[m[41m[m
+[32m+[m[32m*.lib[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m# Executables[m[41m[m
+[32m+[m[32m*.exe[m[41m[m
+[32m+[m[32m*.out[m[41m[m
+[32m+[m[32m*.app[m[41m[m
+[1mdiff --git a/.pio/build/ttgo-lora32-v21/firmware.map b/.pio/build/ttgo-lora32-v21/firmware.map[m
+[1mindex dc8fdc5..030269c 100644[m
+[1m--- a/.pio/build/ttgo-lora32-v21/firmware.map[m
+[1m+++ b/.pio/build/ttgo-lora32-v21/firmware.map[m
+[36m@@ -1,103335 +1,103335 @@[m
+[31m-Archive member included to satisfy reference by file (symbol)[m
+[31m-[m
+[31m-.pio\build\ttgo-lora32-v21\libd17\libSPI.a(SPI.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (SPIClass::begin(signed char, signed char, signed char, signed char))[m
+[31m-.pio\build\ttgo-lora32-v21\lib4f3\libLoRa.a(LoRa.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (LoRaClass::setPins(int, int, int))[m
+[31m-.pio\build\ttgo-lora32-v21\lib659\libWire.a(Wire.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (TwoWire::begin(int, int, unsigned int))[m
+[31m-.pio\build\ttgo-lora32-v21\lib2a1\libAdafruit BME280 Library.a(Adafruit_BME280.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (Adafruit_BME280::Adafruit_BME280())[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(U8x8lib.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (u8x8_gpio_and_delay_arduino)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_box.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (u8g2_DrawBox)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_buffer.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (u8g2_ClearBuffer)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_circle.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_box.c.o) (u8g2_DrawCircle)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_cleardisplay.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (u8g2_ClearDisplay)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (u8g2_Setup_ssd1306_i2c_128x64_noname_f)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_font.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (u8g2_DrawGlyph)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_fonts.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (u8g2_font_ncenB08_tr)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_hvline.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_box.c.o) (u8g2_DrawHVLine)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_intersection.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_box.c.o) (u8g2_IsIntersection)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_kerning.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_font.c.o) (u8g2_GetKerning)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_ll_hvline.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8g2_ll_hvline_vertical_top_lsb)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_setup.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8g2_SetupBuffer)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_8x8.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (u8x8_ascii_next)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_byte.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(U8x8lib.cpp.o) (u8x8_byte_4wire_sw_spi)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_cad.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_setup.c.o) (u8x8_cad_vsendf)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_capture.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_buffer.c.o) (u8x8_capture_get_pixel_1)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_a2printer.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_a2printer_384x240)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ch1120.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ch1120_128x160)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_gp1247ai.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_gp1247ai_253x63)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_gp1287ai.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_gp1287ai_256x50)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_gp1294ai.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_gp1294ai_256x48)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_gu800.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_gu800_128x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_hd44102.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_t7932_150x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_il3820_296x128.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_il3820_296x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ist3020.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ist3020_erc19264)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ist3088.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ist3088_320x240)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ist7920.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ist7920_128x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ks0108.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ks0108_128x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_lc7981.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_lc7981_160x80)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ld7032_60x32.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ld7032_60x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ls013b7dh03.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ls013b7dh03_128x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_max7219.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_max7219_32x8)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_pcd8544_84x48.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_pcd8544_84x48)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_pcf8812.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_pcf8812_96x65)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_pcf8814_hx1230.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_hx1230_96x68)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_s1d15300.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_s1d15300_lm6023)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_s1d15721.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_s1d15721_240x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_s1d15e06.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_s1d15e06_160100)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_sbn1661.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_sbn1661_122x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_sed1330.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_sed1330_240x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_sh1106_64x32.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_sh1106_64x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_sh1106_72x40.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_sh1106_72x40_wise)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_sh1107.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_sh1107_64x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_sh1108.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_sh1108_160x160)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_sh1122.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_sh1122_256x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1305.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1305_128x32_noname)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_128x32.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_128x32_univision)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_128x64_noname.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_128x64_noname)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_2040x16.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_2040x16)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_48x64.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_48x64_winstar)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_64x32.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_64x32_noname)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_64x48.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_64x48_er)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_72x40.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_72x40_er)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_96x16.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_96x16_er)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1306_96x40.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1306_96x40)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1309.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1309_128x64_noname2)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1312.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1312_128x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1315_128x64_noname.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1315_128x64_noname)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1316.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1316_128x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1317.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1317_96x96)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1318.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1318_128x96)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1320.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1320_160x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1322.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1322_nhd_256x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1325.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1325_nhd_128x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1326.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1326_er_256x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1327.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1327_ws_96x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1329.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1329_128x96_noname)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1362.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1362_256x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1363.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1363_256x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1606_172x72.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1606_172x72)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_ssd1607_200x200.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_ssd1607_200x200)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7302.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7302_122x250)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7305.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7305_122x250)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7511.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7511_avd_320x240)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st75160.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st75160_jm16096)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st75161.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st75161_jlx160160)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st75256.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st75256_jlx256128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7528.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7528_nhd_c160100)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st75320.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st75320_jlx320240)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7539.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7539_192x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7565.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7565_ea_dogm128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7567.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7567_pi_132x64)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7571.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7571_128x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7586s_erc240160.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7586s_erc240160)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7586s_jlx320160.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7586s_jlx320160)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7586s_jlx384160.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7586s_jlx384160)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7586s_md240128.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7586s_md240128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7586s_s028hn118a.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7586s_s028hn118a)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7586s_ymc240160.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7586s_ymc240160)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7588.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7588_jlx12864)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_st7920.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_st7920_128x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_t6963.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_t6963_240x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1601.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1601_128x32)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1604.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1604_jlx12864)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1608.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1608_erc24064)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1609.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1609_slg19264)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1610.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1610_ea_dogxl160)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1611.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1611_ea_dogm240)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1617.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1617_jlx128128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1628.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1628_256x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1638.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1638_160x128)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1701_dogs102.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1701_ea_dogs102)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_uc1701_mini12864.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8x8_d_uc1701_mini12864)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_display.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_d_a2printer.c.o) (u8x8_d_helper_display_setup_memory)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_gpio.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(U8x8lib.cpp.o) (u8x8_gpio_call)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_setup.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_setup.c.o) (u8x8_d_null_cb)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_u16toa.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8x8_capture.c.o) (u8x8_utoa)[m
+[31m-.pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_memory.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib8d5\libU8g2.a(u8g2_d_setup.c.o) (u8g2_m_16_4_1)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(HardwareSerial.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (HardwareSerial::flush())[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(Print.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (Print::print(String const&))[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(Stream.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib4f3\libLoRa.a(LoRa.cpp.o) (Stream::readBytes(char*, unsigned int))[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(WString.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (String::~String())[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-adc.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (analogSetAttenuation)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-gpio.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-adc.c.o) (digitalPinToTouchChannel)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-i2c-slave.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib659\libWire.a(Wire.cpp.o) (i2cSlaveAttachCallbacks)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-i2c.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib659\libWire.a(Wire.cpp.o) (i2cIsInit)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-misc.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib4f3\libLoRa.a(LoRa.cpp.o) (yield)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-spi.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libd17\libSPI.a(SPI.cpp.o) (spiAttachSCK)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-uart.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(HardwareSerial.cpp.o) (uart_get_RxPin)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(main.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-misc.c.o) (loopTaskWDTEnabled)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(stdlib_noniso.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(WString.cpp.o) (ltoa)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(FunctionalInterrupt.cpp.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-gpio.c.o) (cleanupFunctional)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-cpu.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-spi.c.o) (addApbChangeCallback)[m
+[31m-.pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-matrix.c.o)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-spi.c.o) (pinMatrixOutAttach)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_ringbuf.a(ringbuf.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-i2c-slave.c.o) (xRingbufferCreate)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(gpio.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-gpio.c.o) (gpio_set_intr_type)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(i2c.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-i2c.c.o) (i2c_driver_delete)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(periph_ctrl.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-i2c-slave.c.o) (periph_module_enable)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(rtc_io.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(gpio.c.obj) (rtc_gpio_deinit)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(rtc_module.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(rtc_io.c.obj) (rtc_spinlock)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(uart.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-uart.c.o) (uart_set_word_length)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(adc_common.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-adc.c.o) (adc_set_clk_div)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(dac_common.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(adc_common.c.obj) (dac_output_disable)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(adc.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-adc.c.o) (hall_sensor_read)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libapp_update.a(esp_ota_ops.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-misc.c.o) (esp_ota_get_running_partition)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libapp_update.a(esp_app_desc.c.obj)[m
+[31m-                              (esp_app_desc)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_common_loader.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libapp_update.a(esp_ota_ops.c.obj) (bootloader_common_ota_select_crc)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_flash.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_common_loader.c.obj) (bootloader_mmap)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(esp_image_format.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libapp_update.a(esp_ota_ops.c.obj) (esp_image_verify)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_sha.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(esp_image_format.c.obj) (bootloader_sha256_start)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_utility.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(esp_image_format.c.obj) (bootloader_debug_buffer)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(flash_partitions.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_utility.c.obj) (esp_partition_table_verify)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_random_esp32.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_utility.c.obj) (bootloader_random_disable)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(partition.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libapp_update.a(esp_ota_ops.c.obj) (esp_partition_next)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_rom_patch.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_flash.c.obj) (esp_rom_spiflash_wait_idle)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(flash_mmap.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_flash.c.obj) (spi_flash_mmap)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(flash_ops.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_flash.c.obj) (spi_flash_erase_sector)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(esp_flash_api.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(partition.c.obj) (esp_flash_erase_region)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(esp_flash_spi_init.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(partition.c.obj) (esp_flash_default_chip)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_os_func_app.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(esp_flash_spi_init.c.obj) (esp_flash_init_os_functions)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_os_func_noos.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(esp_flash_spi_init.c.obj) (esp_flash_noos_functions)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_drivers.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(esp_flash_api.c.obj) (esp_flash_registered_chips)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_generic.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_drivers.c.obj) (esp_flash_chip_generic)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_issi.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_drivers.c.obj) (esp_flash_chip_issi)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_mxic.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_drivers.c.obj) (esp_flash_chip_mxic)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_gd.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_drivers.c.obj) (esp_flash_chip_gd)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_winbond.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_gd.c.obj) (spi_flash_chip_winbond_read)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(memspi_host_driver.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(esp_flash_spi_init.c.obj) (memspi_host_init_pointers)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(cache_utils.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(flash_ops.c.obj) (spi_flash_init_lock)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_api.cpp.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-misc.c.o) (nvs_flash_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_storage.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_api.cpp.obj) (nvs::Storage::isValid() const)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_handle_simple.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_api.cpp.obj) (nvs::NVSHandleSimple::get_partition_name() const)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_partition.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_api.cpp.obj) (nvs::NVSPartition::NVSPartition(esp_partition_t const*))[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_partition_manager.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_api.cpp.obj) (nvs::NVSPartitionManager::get_instance())[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_item_hash_list.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_storage.cpp.obj) (nvs::HashList::~HashList())[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_page.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_storage.cpp.obj) (nvs::Page::writeItem(unsigned char, nvs::ItemType, char const*, void const*, unsigned int, unsigned char))[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_pagemanager.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_storage.cpp.obj) (nvs::PageManager::fillStats(nvs_stats_t&))[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_partition_lookup.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_partition_manager.cpp.obj) (nvs::partition_lookup::lookup_nvs_partition(char const*, nvs::NVSPartition**))[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_types.cpp.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnvs_flash.a(nvs_page.cpp.obj) (nvs::Item::calculateCrc32() const)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libpthread.a(pthread.c.obj)[m
+[31m-                              (pthread_include_pthread_impl)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libpthread.a(pthread_cond_var.c.obj)[m
+[31m-                              (pthread_include_pthread_cond_var_impl)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libpthread.a(pthread_local_storage.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libpthread.a(pthread.c.obj) (pthread_key_create)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libpthread.a(pthread_rwlock.c.obj)[m
+[31m-                              (pthread_include_pthread_rwlock_impl)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_phy.a(phy_override.c.obj)[m
+[31m-                              (include_esp_phy_override)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(esp_err.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-uart.c.o) (_esp_error_check_failed)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(esp_system.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libapp_update.a(esp_ota_ops.c.obj) (esp_restart)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(system_time.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_os_func_app.c.obj) (esp_system_get_time)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(stack_check.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (__stack_chk_guard)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(task_wdt.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-misc.c.o) (esp_task_wdt_add)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(ubsan.c.obj)[m
+[31m-                              (__ubsan_include)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(cpu_start.c.obj)[m
+[31m-                              (call_start_cpu0)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(highint_hdl.S.obj)[m
+[31m-                              (ld_include_highint_hdl)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(clk.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(cpu_start.c.obj) (esp_clk_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(reset_reason.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(task_wdt.c.obj) (esp_reset_reason_set_hint)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(system_internal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(esp_system.c.obj) (esp_restart_noos)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(cache_err_int.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(cpu_start.c.obj) (esp_cache_err_int_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(debug_helpers.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(task_wdt.c.obj) (esp_backtrace_print)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(debug_helpers_asm.S.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(debug_helpers.c.obj) (esp_backtrace_get_start)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(crosscore_int.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(task_wdt.c.obj) (esp_crosscore_int_send_print_backtrace)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(freertos_hooks.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(task_wdt.c.obj) (esp_register_freertos_idle_hook_for_cpu)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(int_wdt.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(highint_hdl.S.obj) (int_wdt_app_cpu_ticked)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(panic.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(debug_helpers.c.obj) (panic_print_str)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(startup.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(cpu_start.c.obj) (g_startup_fn)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(panic_handler.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(highint_hdl.S.obj) (panicHandler)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(brownout.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(startup.c.obj) (esp_brownout_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(panic_arch.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(panic_handler.c.obj) (panic_print_registers)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_rom.a(esp_rom_uart.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(esp_system.c.obj) (esp_rom_uart_tx_wait_idle)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(wdt_hal_iram.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(task_wdt.c.obj) (wdt_hal_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(cpu_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(panic.c.obj) (cpu_hal_set_breakpoint)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(efuse_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_common_loader.c.obj) (efuse_hal_chip_revision)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(efuse_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(efuse_hal.c.obj) (efuse_hal_get_major_chip_version)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(rtc_io_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(rtc_io.c.obj) (rtcio_hal_set_direction)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(i2c_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(i2c.c.obj) (i2c_hal_txfifo_rst)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(i2c_hal_iram.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(i2c.c.obj) (i2c_hal_master_handle_tx_event)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(gpio_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(gpio.c.obj) (gpio_hal_intr_enable_on_core)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(uart_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(uart.c.obj) (uart_hal_set_sclk)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(uart_hal_iram.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(uart.c.obj) (uart_hal_txfifo_rst)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(spi_flash_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(memspi_host_driver.c.obj) (spi_flash_hal_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(spi_flash_hal_iram.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(memspi_host_driver.c.obj) (spi_flash_hal_poll_cmd_done)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(spi_flash_encrypt_hal_iram.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(spi_flash_chip_generic.c.obj) (spi_flash_encryption_hal_enable)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(soc_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(panic_handler.c.obj) (soc_hal_stall_core)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(adc_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(adc_common.c.obj) (adc_hal_convert)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(dac_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(dac_common.c.obj) (dac_hal_cw_generator_config)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(adc_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(adc.c.obj) (adc_hal_hall_convert)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(brownout_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(brownout.c.obj) (brownout_hal_config)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(i2s_hal.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libhal.a(adc_hal.c.obj) (i2s_hal_mclk_div_decimal_cal)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libvfs.a(vfs.c.obj)[m
+[31m-                              (vfs_include_syscalls_impl)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libvfs.a(vfs_console.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(startup.c.obj) (esp_vfs_console_register)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libvfs.a(vfs_uart.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libvfs.a(vfs_console.c.obj) (esp_vfs_uart_get_vfs)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_wifi.a(esp_adapter.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(startup.c.obj) (g_coex_adapter_funcs)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\liblog.a(log.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libbootloader_support.a(bootloader_flash.c.obj) (esp_log_default_level)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\liblog.a(log_freertos.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\liblog.a(log.c.obj) (esp_log_impl_lock)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(heap_caps.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(flash_mmap.c.obj) (heap_caps_malloc)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(heap_caps_init.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(heap_caps.c.obj) (registered_heaps)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(multi_heap.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(heap_caps_init.c.obj) (multi_heap_set_lock)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(heap_tlsf.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(multi_heap.c.obj) (tlsf_check)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(multi_heap_poisoning.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(heap_caps.c.obj) (multi_heap_aligned_alloc)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(memory_layout_utils.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(heap_caps_init.c.obj) (soc_get_available_memory_region_max_count)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(memory_layout.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libheap.a(heap_caps_init.c.obj) (soc_memory_region_count)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libsoc.a(adc_periph.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-gpio.c.o) (adc_channel_io_map)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libsoc.a(dac_periph.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(dac_common.c.obj) (dac_periph_signal)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libsoc.a(gpio_periph.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(gpio.c.obj) (GPIO_PIN_MUX_REG_OFFSET)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libsoc.a(i2c_periph.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(i2c.c.obj) (i2c_periph_signal)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libsoc.a(rtc_io_periph.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(rtc_io.c.obj) (rtc_io_desc)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libsoc.a(spi_periph.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(esp_flash_spi_init.c.obj) (spi_periph_signal)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libsoc.a(touch_sensor_periph.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-gpio.c.o) (touch_sensor_channel_io_map)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libsoc.a(uart_periph.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-uart.c.o) (uart_periph_signal)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(compare_set.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libpthread.a(pthread.c.obj) (compare_and_set_extram)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(cpu_util.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(system_internal.c.obj) (esp_cpu_stall)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(esp_clk.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(startup.c.obj) (esp_clk_cpu_freq)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(hw_random.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(stack_check.c.obj) (esp_random)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(intr_alloc.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(gpio.c.obj) (esp_intr_get_cpu)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(mac_addr.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_wifi.a(esp_adapter.c.obj) (esp_read_mac)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(sleep_modes.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\src\LORA_SNDR.ino.cpp.o (esp_deep_sleep_start)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(sleep_gpio.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(sleep_modes.c.obj) (esp_sleep_isolate_digital_gpio)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(regi2c_ctrl.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_phy.a(phy_override.c.obj) (regi2c_enter_critical)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(rtc_clk.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(clk.c.obj) (rtc_clk_32k_enable)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(rtc_init.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(clk.c.obj) (rtc_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(rtc_sleep.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(sleep_modes.c.obj) (rtc_sleep_get_default_config)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(rtc_time.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(clk.c.obj) (rtc_clk_cal)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(chip_info.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(cpu_start.c.obj) (esp_chip_info)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(dport_access.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-spi.c.o) (esp_dport_access_reg_read)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(spiram.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\dio_qspi\libspi_flash.a(flash_mmap.c.obj) (esp_spiram_writeback_cache)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(spiram_psram.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(spiram.c.obj) (psram_get_cs_io)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(sar_periph_ctrl.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(rtc_init.c.obj) (sar_periph_ctrl_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(cache_sram_mmu.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(spiram.c.obj) (cache_sram_mmu_set)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libxtensa.a(xtensa_intr.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(intr_alloc.c.obj) (xt_int_has_handler)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libxtensa.a(xtensa_intr_asm.S.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libxtensa.a(xtensa_intr.c.obj) (_xt_interrupt_table)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_common.a(esp_err_to_name.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-adc.c.o) (esp_err_to_name)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_timer.a(esp_timer.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(startup.c.obj) (esp_timer_early_init)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_timer.a(ets_timer_legacy.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_wifi.a(esp_adapter.c.obj) (ets_timer_setfn)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_timer.a(system_time.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_timer.a(esp_timer.c.obj) (esp_timer_impl_init_system_time)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_timer.a(esp_timer_impl_lac.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_hw_support.a(sleep_modes.c.obj) (esp_timer_private_lock)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(port.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libdriver.a(periph_ctrl.c.obj) (xPortInIsrContext)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(portasm.S.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(port.c.obj) (_frxt_setup_switch)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(xtensa_context.S.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_system.a(highint_hdl.S.obj) (_xt_context_save)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(xtensa_init.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(esp32-hal-cpu.c.o) (_xt_tick_divisor)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(xtensa_vectors.S.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(port.c.obj) (_xt_user_exit)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(port_common.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(port.c.obj) (esp_startup_start_app_common)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(port_systick.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(port.c.obj) (vPortSetupTimer)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(event_groups.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libesp_wifi.a(esp_adapter.c.obj) (xEventGroupCreate)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(list.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(event_groups.c.obj) (vListInitialise)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(queue.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\libFrameworkArduino.a(HardwareSerial.cpp.o) (xQueueGenericReset)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(tasks.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(portasm.S.obj) (pxCurrentTCB)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(FreeRTOS-openocd.c.obj)[m
+[31m-                              (uxTopUsedPriority)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(xtensa_vector_defaults.S.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libfreertos.a(xtensa_vectors.S.obj) (xt_debugexception)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnewlib.a(abort.c.obj)[m
+[31m-                              C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libapp_update.a(esp_ota_ops.c.obj) (abort)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnewlib.a(assert.c.obj)[m
+[31m-                              (__assert_func)[m
+[31m-C:\Users\jacek\.platformio\packages\framework-arduinoespressif32\tools\sdk\esp32\lib\libnewlib.a(heap.c.obj)[m
+[31m-                              .pio\build\ttgo-lora32-v21\lib659\libWire.a(Wire.cpp.o) (malloc)[m

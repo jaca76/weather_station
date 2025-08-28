@@ -310,26 +310,20 @@ void calculateWeatherShieldData(unsigned long currentTime) {
 // --- Function to Convert Wind Vane ADC Reading to Direction ---
 // Updated thresholds for ESP32 12-bit ADC (0-4095 range)
 String getWindDirection(int adcValue) {
-  // These values may need calibration based on your specific setup
-  // The following are typical values for SparkFun Weather Meters with 3.3V supply
-       if (adcValue >= 3800) return "N";     // ~3.84V
-  else if (adcValue >= 3400) return "NNE";   // ~2.98V  
-  else if (adcValue >= 3200) return "NE";    // ~2.25V
-  else if (adcValue >= 2800) return "ENE";   // ~1.41V
-  else if (adcValue >= 2400) return "E";     // ~1.19V
-  else if (adcValue >= 2000) return "ESE";   // ~0.94V
-  else if (adcValue >= 1600) return "SE";    // ~0.69V
-  else if (adcValue >= 1200) return "SSE";   // ~0.45V
-  else if (adcValue >= 900)  return "S";     // ~0.32V
-  else if (adcValue >= 700)  return "SSW";   // ~0.28V
-  else if (adcValue >= 500)  return "SW";    // ~0.26V
-  else if (adcValue >= 350)  return "WSW";   // ~0.24V
-  else if (adcValue >= 250)  return "W";     // ~0.21V
-  else if (adcValue >= 150)  return "WNW";   // ~0.18V
-  else if (adcValue >= 100)  return "NW";    // ~0.16V
-  else if (adcValue >= 50)   return "NNW";   // ~0.14V
+  // These values are calibrated for a 3.3V supply and a 9.3kΩ pull-down resistor.
+  // Using 8 directions (instead of 16) for more stable readings due to ADC fluctuations.
+
+       if (adcValue >= 3456) return "N";    // Boundary: NNE
+  else if (adcValue >= 2900) return "NE";   // Boundary: ENE     
+  else if (adcValue >= 2528) return "E";    // Boundary: ESE
+  else if (adcValue >= 1815) return "NW";   // Boundary: ENE
+  else if (adcValue >= 1140) return "SE";   // Boundary: SSE
+  else if (adcValue >= 660)  return "W";    // Boundary: SSW
+  else if (adcValue >= 329)  return "SW";   // Boundary: WSW
+  else if (adcValue >= 130)  return "S";    // Boundary: WNW
   else return "---"; 
 }
+
 
 // --- Function to Display Info on OLED (Conditional) ---
 #if DEBUG
@@ -338,18 +332,18 @@ void displayInfo() {
   char dataStr[32]; 
 
   u8g2.setFont(u8g2_font_ncenB08_tr);
-  if (!isnan(temperature)) snprintf(dataStr, sizeof(dataStr), "T:%.1fC", temperature); else snprintf(dataStr, sizeof(dataStr), "T:---C");
-  u8g2.drawStr(0, 10, dataStr);
-  if (!isnan(humidity)) snprintf(dataStr, sizeof(dataStr), "H:%.0f%%", humidity); else snprintf(dataStr, sizeof(dataStr), "H:--%%");
-  u8g2.drawStr(64, 10, dataStr); 
-  if (!isnan(pressure_hPa)) snprintf(dataStr, sizeof(dataStr), "P:%.0fhPa", pressure_hPa); else snprintf(dataStr, sizeof(dataStr), "P:----hPa"); 
-  u8g2.drawStr(0, 25, dataStr);
+  // if (!isnan(temperature)) snprintf(dataStr, sizeof(dataStr), "T:%.1fC", temperature); else snprintf(dataStr, sizeof(dataStr), "T:---C");
+  // u8g2.drawStr(0, 10, dataStr);
+  // if (!isnan(humidity)) snprintf(dataStr, sizeof(dataStr), "H:%.0f%%", humidity); else snprintf(dataStr, sizeof(dataStr), "H:--%%");
+  // u8g2.drawStr(64, 10, dataStr); 
+  // if (!isnan(pressure_hPa)) snprintf(dataStr, sizeof(dataStr), "P:%.0fhPa", pressure_hPa); else snprintf(dataStr, sizeof(dataStr), "P:----hPa"); 
+  // u8g2.drawStr(0, 25, dataStr);
 
-  u8g2.drawStr(0, 40, "No Lightning Sensor"); // Placeholder or remove
-
+  // u8g2.drawStr(0, 40, "No Lightning Sensor"); // Placeholder or remove
+  // The following lines are related to wind direction and screen, so they are not commented out.
   snprintf(dataStr, sizeof(dataStr), "W:%s %.1fkph", windDirectionStr.c_str(), windSpeedKmh);
   u8g2.drawStr(0, 55, dataStr);
-
+  // The following lines are related to wind direction and screen, so they are not commented out.
   int windStrLen = u8g2.getStrWidth(dataStr);
   snprintf(dataStr, sizeof(dataStr), "R:%.1f/%.1fmm", rainfallMm, totalRainfallMm);
   if (windStrLen < 70) { 
@@ -376,15 +370,18 @@ void sendLoRaPacket() {
 
   StaticJsonDocument<200> jsonDoc; // Reduced size as lightning data is removed
 
-  if (!isnan(temperature)) jsonDoc["T"] = serialized(String(temperature, 1));
-  if (!isnan(humidity)) jsonDoc["H"] = serialized(String(humidity, 1));
-  if (!isnan(pressure_hPa)) jsonDoc["P"] = serialized(String(pressure_hPa, 1));
+  // Assign numeric types directly to JSON doc for better performance and memory usage.
+  // The round() trick is an efficient way to control decimal precision.
+  if (!isnan(temperature)) jsonDoc["T"] = round(temperature * 10) / 10.0;
+  if (!isnan(humidity)) jsonDoc["H"] = round(humidity * 10) / 10.0;
+  if (!isnan(pressure_hPa)) jsonDoc["P"] = round(pressure_hPa * 10) / 10.0;
 
-  jsonDoc["WS"] = serialized(String(windSpeedKmh, 1));
+  jsonDoc["WS"] = round(windSpeedKmh * 10) / 10.0;
   jsonDoc["WD"] = windDirectionStr;
-  jsonDoc["R"] = serialized(String(totalRainfallMm, 2)); 
+  jsonDoc["R"] = round(totalRainfallMm * 100) / 100.0;
 
   String jsonPacket;
+  // serializeJson will convert the numbers to text in the JSON string.
   serializeJson(jsonDoc, jsonPacket);
 
   LoRa.beginPacket();
