@@ -9,7 +9,6 @@
             "name": "PlatformIO",
             "includePath": [
                 "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/src",
-                "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/libdeps/ttgo-lora32-v21/PubSubClient/src",
                 "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/libdeps/ttgo-lora32-v21/ArduinoJson/src",
                 "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/libdeps/ttgo-lora32-v21/U8g2/src",
                 "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/libdeps/ttgo-lora32-v21/Adafruit BME280 Library",
@@ -251,7 +250,6 @@
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
                     "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/src",
-                    "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/libdeps/ttgo-lora32-v21/PubSubClient/src",
                     "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/libdeps/ttgo-lora32-v21/ArduinoJson/src",
                     "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/libdeps/ttgo-lora32-v21/U8g2/src",
                     "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/libdeps/ttgo-lora32-v21/Adafruit BME280 Library",

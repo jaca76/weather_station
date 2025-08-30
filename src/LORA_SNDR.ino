@@ -11,12 +11,11 @@
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
-#include <soc/rtc.h>
 #include <ArduinoJson.h>
 #include <math.h>
 
 // --- Debug Configuration ---
-#define DEBUG true  // true: OLED + Serial verbose; false: low-power headless
+#define DEBUG 1  // 1: OLED + Serial verbose; 0: low-power headless
 
 // --- Deep Sleep / Active Windows ---
 #define DEEP_SLEEP_DURATION_US (5ULL * 60ULL * 1000000ULL) // 5 minutes
@@ -56,7 +55,7 @@
 
 // --- Objects ---
 #if DEBUG
-U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* clock=*/ OLED_SCL, /* data=*/ OLED_SDA);
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 #endif
 Adafruit_BME280 bme;
 
@@ -69,6 +68,7 @@ float pressure_hPa  = NAN;
 volatile unsigned long isr_rainClicks = 0;
 volatile unsigned long isr_windClicks = 0;
 volatile unsigned long lastWindPulseTime = 0;
+volatile unsigned long lastRainPulseTime = 0;
 
 // --- Minute accumulators ---
 unsigned long minuteWindPulses = 0;
@@ -94,7 +94,13 @@ float windSpeedKmh   = 0.0f;  // minute average km/h
 float totalRainfallMm = 0.0f; // minute total
 
 // --- ISRs ---
-void IRAM_ATTR rain_isr() { isr_rainClicks++; }
+void IRAM_ATTR rain_isr() {
+  unsigned long now = micros();
+  if (now - lastRainPulseTime > DEBOUNCE_DELAY_US) {
+    isr_rainClicks++;
+    lastRainPulseTime = now;
+  }
+}
 
 void IRAM_ATTR wind_speed_isr() {
   unsigned long now = micros();
@@ -151,8 +157,10 @@ void setup() {
   pinMode(WIND_DIR_PIN, INPUT);
 
   // Rain / Wind pulses
-  pinMode(RAIN_PIN, INPUT_PULLUP);
-  pinMode(WIND_SPEED_PIN, INPUT_PULLUP);
+  // GPIO34/35 are input-only; internal pull-ups are not available.
+  // Ensure external pull-ups are present on these lines.
+  pinMode(RAIN_PIN, INPUT);
+  pinMode(WIND_SPEED_PIN, INPUT);
   detachInterrupt(digitalPinToInterrupt(RAIN_PIN));
   detachInterrupt(digitalPinToInterrupt(WIND_SPEED_PIN));
   attachInterrupt(digitalPinToInterrupt(RAIN_PIN),       rain_isr,       FALLING);
@@ -173,6 +181,9 @@ void setup() {
     esp_sleep_enable_timer_wakeup(DEEP_SLEEP_DURATION_US);
     esp_deep_sleep_start();
   }
+  // Optional radio parameters for isolation and consistency
+  LoRa.setSyncWord(0x12);
+  LoRa.setTxPower(14);
   Serial.print(F("LoRa OK @ ")); Serial.println((unsigned long)LORA_FREQUENCY);
 
   // Active phase timing
