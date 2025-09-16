@@ -12,9 +12,9 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/build/ttgo-lora32-v21/firmware.elf",
+            "executable": "C:/Users/jackb/Documents/Code/weather_station/.pio/build/ttgo-lora32-v21/firmware.elf",
             "projectEnvName": "ttgo-lora32-v21",
-            "toolchainBinDir": "C:/Users/jacek/.platformio/packages/toolchain-xtensa-esp32/bin",
+            "toolchainBinDir": "C:/Users/jackb/.platformio/packages/toolchain-xtensa-esp32/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "preLaunchTask": {
                 "type": "PlatformIO",
@@ -25,18 +25,18 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/build/ttgo-lora32-v21/firmware.elf",
+            "executable": "C:/Users/jackb/Documents/Code/weather_station/.pio/build/ttgo-lora32-v21/firmware.elf",
             "projectEnvName": "ttgo-lora32-v21",
-            "toolchainBinDir": "C:/Users/jacek/.platformio/packages/toolchain-xtensa-esp32/bin",
+            "toolchainBinDir": "C:/Users/jackb/.platformio/packages/toolchain-xtensa-esp32/bin",
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (without uploading)",
-            "executable": "C:/Users/jacek/OneDrive/Dokumenty/PlatformIO/Projects/ESP_Weather/weather_station — sender/.pio/build/ttgo-lora32-v21/firmware.elf",
+            "executable": "C:/Users/jackb/Documents/Code/weather_station/.pio/build/ttgo-lora32-v21/firmware.elf",
             "projectEnvName": "ttgo-lora32-v21",
-            "toolchainBinDir": "C:/Users/jacek/.platformio/packages/toolchain-xtensa-esp32/bin",
+            "toolchainBinDir": "C:/Users/jackb/.platformio/packages/toolchain-xtensa-esp32/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "loadMode": "manual"
         }
